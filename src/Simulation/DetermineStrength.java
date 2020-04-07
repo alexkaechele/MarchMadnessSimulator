@@ -78,6 +78,7 @@ public class DetermineStrength {
 						
 						// normalize defensive strength
 						teams[i].defense_strength /= teams[i].games_played;
+						teams[i].defense_strength /= teams[i].poss;
 						
 						// exit the loop
 						break;

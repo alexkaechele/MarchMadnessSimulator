@@ -5,30 +5,6 @@ public class GameSimulation {
 	// Game simulation function
 	public static void SimulateGame(String team1, String team2){
 
-		// read in data
-
-		// determine team stats
-
-		// determine number of possessions
-
-		// loop though half of possessions
-
-		// show halftime box score
-
-		// ask to continue to next half
-
-		// loop though rest of possessions
-
-
-		// print final score
-		System.out.println(team1 + " beat " + team2);
-
-	}
-
-
-	// Play a game
-	public static void main(String[] args) {
-		
 		System.out.println("Setting up game");
 
 		// Load in player data
@@ -46,16 +22,28 @@ public class GameSimulation {
 		// Add strength of schedule
 		teams = DetermineStrength.SOS(teams);
 		
+		
+		for(int i=0; i < teams.length;i++) {
+			if(teams[i]!=null) {
+				System.out.println(teams[i].team_name);
+			}
+		}
+		
 		// Ask to continue
 		System.out.println("Setting up game is complete");
 		Delays.WaitForIt("game");
 		
 		// Play the game
 		Game game = new Game();
-		game.PlayGame("Kansas", "Duke", teams);
+		game.PlayGame(team1, team2, teams);
+
+	}
+
+
+	// Specify teams that are playing here
+	public static void main(String[] args) {
 		
-		//StatCalculator.DescribeTeam("Kansas", teams);
-		
+		SimulateGame("Kansas", "Kansas St");
 		
 	}
 
